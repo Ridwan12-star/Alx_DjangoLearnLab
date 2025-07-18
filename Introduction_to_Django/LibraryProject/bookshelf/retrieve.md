@@ -1,12 +1,13 @@
-# Retrieve Operation
+# 🔍 Retrieve Operation
 
 ```python
-from bookshelf.models import Book
+# Retrieve the book by title
+book = Book.objects.get(title="1984")
+book.title  # Output: '1984'
+book.author  # Output: 'George Orwell'
+book.publication_year  # Output: 1949
 
-# Retrieve all books
-books = Book.objects.all()
-print(books)
-
-# Output:
-# <QuerySet [<Book: 1984 by George Orwell (1949)>]>
+# Or display all attributes at once
+print(book)
+# Output: 1984 by George Orwell (1949)
 ```

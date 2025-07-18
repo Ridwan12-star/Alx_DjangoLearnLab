@@ -1,15 +1,12 @@
-# Update Operation
+# ✏️ Update Operation
 
 ```python
-from bookshelf.models import Book
-
-# Retrieve the book
+# Fetch the book and update its title
 book = Book.objects.get(title="1984")
-
-# Update the title
 book.title = "Nineteen Eighty-Four"
 book.save()
 
-# Output:
-# The book's title is successfully updated.
+# Confirm the update
+print(book)
+# Output: Nineteen Eighty-Four by George Orwell (1949)
 ```

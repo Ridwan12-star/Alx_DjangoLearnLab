@@ -1,18 +1,11 @@
-# Delete Operation
+# ❌ Delete Operation
 
 ```python
-from bookshelf.models import Book
-
-# Retrieve the book
-book = Book.objects.get(title="Nineteen Eighty-Four")
-
 # Delete the book
+book = Book.objects.get(title="Nineteen Eighty-Four")
 book.delete()
 
-# Confirm deletion
+# Confirm deletion by retrieving all books
 Book.objects.all()
-
-# Output:
-# <QuerySet []>
-# The book was successfully deleted.
+# Output: <QuerySet []>
 ```
