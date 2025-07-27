@@ -118,3 +118,36 @@ CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = ("'self'",)
 CSP_STYLE_SRC = ("'self'", 'https://fonts.googleapis.com')
 CSP_FONT_SRC = ("'self'", 'https://fonts.gstatic.com')
+
+
+# SECURITY CONFIGURATIONS FOR PRODUCTION
+
+# Ensure you set this to False in production
+DEBUG = False
+
+# Redirect all HTTP traffic to HTTPS
+SECURE_SSL_REDIRECT = True
+
+# HTTP Strict Transport Security (HSTS) settings
+SECURE_HSTS_SECONDS = 31536000  # 1 year in seconds
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# Secure cookies
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# Prevent browsers from MIME-sniffing the content-type
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Enable browser's XSS protection
+SECURE_BROWSER_XSS_FILTER = True
+
+# Prevent the site from being embedded in frames (clickjacking protection)
+X_FRAME_OPTIONS = 'DENY'
+
+# Use this if Django is behind a reverse proxy like Nginx or Heroku
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# ALLOWED_HOSTS must be properly set in production
+ALLOWED_HOSTS = ['your-production-domain.com', 'localhost', '127.0.0.1']
