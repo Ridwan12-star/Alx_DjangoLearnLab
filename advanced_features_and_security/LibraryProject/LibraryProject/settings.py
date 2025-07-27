@@ -117,3 +117,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ✅ Use custom user model from bookshelf app
 AUTH_USER_MODEL = 'bookshelf.CustomUser'
+
+
+# SECURITY SETTINGS
+DEBUG = False  # Make sure this is False in production
+
+ALLOWED_HOSTS = ['yourdomain.com', 'localhost', '127.0.0.1']  # Adjust as needed
+
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+# CSP HEADERS (see Step 4 for how to add this properly)

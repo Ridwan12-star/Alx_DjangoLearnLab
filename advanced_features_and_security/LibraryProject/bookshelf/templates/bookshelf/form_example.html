@@ -1,0 +1,20 @@
+<!-- bookshelf/templates/bookshelf/form_example.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Form</title>
+</head>
+<body>
+    <h1>Example Secure Form</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
