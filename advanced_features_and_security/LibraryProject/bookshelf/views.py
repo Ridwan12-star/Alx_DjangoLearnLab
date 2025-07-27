@@ -4,6 +4,22 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import permission_required
 from .models import Book
 from .forms import BookForm
+from django.shortcuts import render
+from .forms import ExampleForm  # ✅ Required import
+
+def example_form_view(request):
+    if request.method == 'POST':
+        form = ExampleForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            return render(request, 'bookshelf/form_example.html', {
+                'form': form,
+                'message': f'Hello, {name}!'
+            })
+    else:
+        form = ExampleForm()
+    return render(request, 'bookshelf/form_example.html', {'form': form})
+
 
 @permission_required('bookshelf.can_view', raise_exception=True)
 def book_list(request):
