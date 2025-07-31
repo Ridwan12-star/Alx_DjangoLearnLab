@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookshelf',
     'csp',  # if using django-csp for Content Security Policy
+    'restframework.authtoken'
 ]
 
 MIDDLEWARE = [
